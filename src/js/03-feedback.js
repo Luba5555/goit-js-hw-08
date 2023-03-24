@@ -10,7 +10,7 @@ function saveFormEls() {
 localStorage.setItem('feedback-form-state', JSON.stringify({ email: emailInput.value, message: messageInput.value }));
 }
 
-form.addEventListener('input', saveFormEls);
+form.addEventListener('input', throttle(saveFormEls, 5000));
 
 
 function parsedformEls() {
@@ -36,6 +36,6 @@ function onSubmit(event) {
 
 }
 
-const throttleonSubmit = throttle(onSubmit, 500);
+//const throttleonSubmit = throttle(onSubmit, 500);
 
 form.addEventListener('submit', throttleonSubmit);
