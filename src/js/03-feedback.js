@@ -10,7 +10,7 @@ function saveFormEls() {
 localStorage.setItem('feedback-form-state', JSON.stringify({ email: emailInput.value, message: messageInput.value }));
 }
 
-form.addEventListener('input', throttle(saveFormEls, 5000));
+form.addEventListener('input', throttle(saveFormEls, 500));
 
 
 function parsedformEls() {
